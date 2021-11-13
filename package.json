@@ -1,12 +1,18 @@
 {
   "name": "pi4-fan-control",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Control the Raspberry Pi 4 Case Fan by temerature",
   "main": "lib/fan.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "coffee --compile --putput lib src/*.coffee",
-    "watch": "coffee --watch --compile --output lib src/*.coffee &"
+    "build": "coffee --compile --output lib src/*.coffee",
+    "watch": "coffee --watch --compile --output lib src/*.coffee &",
+    "make": "pkg --targets host --out-path bin/ lib/fan.js",
+    "install": "npm run make",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "fan": "./bin/fan"
   },
   "repository": {
     "type": "git",
@@ -30,6 +36,7 @@
   },
   "dependencies": {
     "minimist": "^1.2.5",
+    "pkg": "^5.4.1",
     "rpi-gpio": "^2.1.7",
     "sd-notify": "^2.8.0"
   }

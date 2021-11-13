@@ -26,6 +26,9 @@ switchFan = (pin, onoff = off) ->
     state = onoff
 
 main = ->
+  if process.geteuid() isnt 0
+    console.error "This must be run as root."
+    process.exit 2
   args = Minimist process.argv[2..],
     boolean: [
       'help'
