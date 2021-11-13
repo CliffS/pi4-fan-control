@@ -1,0 +1,18 @@
+[Unit]
+Description=Fan controller for the pi4
+
+[Service]
+Type=notify
+User=root
+Group=root
+WorkingDirectory=/home/cliff/src/git/pi4-fan-control
+ExecStart=/usr/local/bin/node lib/fan.js
+TimeoutStartSec=60
+NotifyAccess=all
+Restart=always
+KillSignal=SIGTERM
+TimeoutStopSec=20
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target

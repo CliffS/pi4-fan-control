@@ -1,0 +1,36 @@
+{
+  "name": "pi4-fan-control",
+  "version": "1.0.0",
+  "description": "Control the Raspberry Pi 4 Case Fan by temerature",
+  "main": "lib/fan.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "coffee --compile --putput lib src/*.coffee",
+    "watch": "coffee --watch --compile --output lib src/*.coffee &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffS/pi4-fan-control.git"
+  },
+  "keywords": [
+    "raspberry",
+    "pi",
+    "case",
+    "fan",
+    "temperature"
+  ],
+  "author": "Cliff Stanford <cliff@may.be>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/CliffS/pi4-fan-control/issues"
+  },
+  "homepage": "https://github.com/CliffS/pi4-fan-control#readme",
+  "devDependencies": {
+    "coffeescript": "^2.6.1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "rpi-gpio": "^2.1.7",
+    "sd-notify": "^2.8.0"
+  }
+}
