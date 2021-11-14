@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "coffee --compile --output lib src/*.coffee",
     "watch": "coffee --watch --compile --output lib src/*.coffee &",
-    "make": "pkg --targets host --out-path bin/ lib/fan.js",
+    "make": "npm run build; pkg --targets host --out-path bin/ lib/fan.js",
     "install": "npm run make",
     "prepublishOnly": "npm run build"
   },
