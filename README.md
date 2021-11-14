@@ -82,8 +82,8 @@ directly from node, rather than the executable.
 
 ## Changelog
 
-**v1.0.0**: First public release
-**v1.0.1**: Documentation fixes only
+**v1.0.0**: First public release  
+**v1.0.2**: Documentation fixes only  
 
 ## Problems
 
