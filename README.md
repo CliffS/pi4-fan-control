@@ -2,10 +2,11 @@
 
 [issues]: https://github.com/CliffS/pi4-fan-control/issues
 
-## Run the fan when the temperature gets high
+### Run the fan when the temperature gets high
 
 This module is designed to be installed globally and will compile
-to a single executable called **fan**.
+to a single executable called **fan** which will probably be in
+`/usr/local/bin`.
 
 The executable can be used to turn the fan on or off but is
 primarily designed to be run out of systemd to monitor the
@@ -61,12 +62,10 @@ The contents should be something like:
 
 Having created this file, please run the following commands:
 
-```bash
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable pi4-fan.service
-$ sudo systemctl start  pi4-fan.service
-$ sudo systemctl status pi4-fan.service
-```
+    $ sudo systemctl daemon-reload
+    $ sudo systemctl enable pi4-fan.service
+    $ sudo systemctl start  pi4-fan.service
+    $ sudo systemctl status pi4-fan.service
 
 This should show the service as running.
 
