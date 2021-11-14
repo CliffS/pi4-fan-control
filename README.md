@@ -1,6 +1,7 @@
 # pi4-fan-control
 
 [issues]: https://github.com/CliffS/pi4-fan-control/issues
+[casefan]: https://www.raspberrypi.com/products/raspberry-pi-4-case-fan/
 
 ### Run the fan when the temperature gets high
 
@@ -15,6 +16,10 @@ temperature and turn the fan on and off as necessary.
 The program was written for the pi4 with the official case fan
 but should work on any fan with its control set to a single gpio
 pin.
+
+It will work on Ubuntu on the pi4 where none of the _official_ solutions
+seems to do the job.  For wiring of the case fan, please see the page
+at [raspberrypi.com][casefan].
 
 ## Install
 
@@ -74,6 +79,11 @@ This should show the service as running.
 As of the time of writing, `pkg-fetch` does not support node version 17.
 Please either revert to node version 16 or run the javascript file
 directly from node, rather than the executable.
+
+## Changelog
+
+**v1.0.0**: First public release
+**v1.0.1**: Documentation fixes only
 
 ## Problems
 
