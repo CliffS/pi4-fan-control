@@ -39,7 +39,8 @@ at [raspberrypi.com][casefan].
            -n --min:        Temperature to turn the fan off   (default: 80)
            -p --pin         Pin to use for control            (default: 14)
            -y --delay       Polling frequency in seconds      (default:  2)
-           -d --debug       Turn on debugging mode
+           -s --show        Display on/off messages on stdout (default: off)
+           -d --debug       Turn on debugging mode            (default: off)
 
 ## Running from systemd
 
@@ -65,6 +66,13 @@ The contents should be something like:
     [Install]
     WantedBy=multi-user.target
 
+If you want a lower max/min temperature setting, add, for example
+`--max 80 --min 72` to the ExecStart line.
+
+If you want the fan on/off messages to be logged to the journal,
+add `--show` to the ExecStart line. They can then be seen with
+`sudo journalctl -xe -u pi4-fan`.
+
 Having created this file, please run the following commands:
 
     $ sudo systemctl daemon-reload
@@ -84,6 +92,7 @@ directly from node, rather than the executable.
 
 **v1.0.0**: First public release  
 **v1.0.2**: Documentation fixes only  
+**v1.1.0**: Added the --show switch
 
 ## Problems
 

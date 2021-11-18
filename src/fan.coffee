@@ -22,7 +22,8 @@ syntax = ->
            -n --min:        Temperature to turn the fan off   (default: 80)
            -p --pin         Pin to use for control            (default: 14)
            -y --delay       Polling frequency in seconds      (default:  2)
-           -d --debug       Turn on debugging mode
+           -s --show        Display on/off messages on stdout (default: off)
+           -d --debug       Turn on debugging mode            (default: off)
     """
   process.exit 1
 
@@ -49,6 +50,7 @@ main = ->
     boolean: [
       'help'
       'version'
+      'show'
       'debug'
     ]
     string: [
@@ -64,6 +66,7 @@ main = ->
       y: 'delay'
       h: 'help'
       v: 'version'
+      s: 'show'
       d: 'debug'
     default:
       max: 85
@@ -101,8 +104,10 @@ main = ->
           log "#{temp}°C" if args.debug
           try
             if temp >= args.max and state isnt on
+              console.log "Switching fan on at #{temp}°C" if args.show
               await switchFan args.pin, on
             if temp <= args.min and state isnt off
+              console.log "Switching fan off at #{temp}°C" if args.show
               await switchFan args.pin, off
           catch err
             console.error err
