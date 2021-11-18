@@ -1,6 +1,6 @@
 {
   "name": "pi4-fan-control",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Control the Raspberry Pi 4 Case Fan by temperature",
   "main": "lib/fan.js",
   "scripts": {
